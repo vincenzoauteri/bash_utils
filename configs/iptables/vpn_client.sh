@@ -23,7 +23,7 @@ iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 
 #allow port 1194 udp used by vpn 
-iptables -A INPUT -p udp --dport 1194 -j ACCEPT
+iptables -A INPUT -p tcp --dport 1194 -j ACCEPT
 
 #OUTBOUND CONNECTIONS 
 
@@ -36,7 +36,7 @@ iptables -A OUTPUT -p udp --dport 53  -j ACCEPT
 
 
 #allow port 1194 udp used by vpn 
-iptables -A OUTPUT -p udp --dport 1194 -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 1194 -j ACCEPT
 
 #drop anything that doesnt match the rules above
 iptables -A INPUT -j DROP
