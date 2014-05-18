@@ -30,6 +30,10 @@ iptables -A INPUT -p udp --dport 1194 -j ACCEPT
 #allow SSH  on port 22, (established connections auto accepted)
 iptables -A OUTPUT -p tcp --dport 22 -j ACCEPT
 
+#allow DNS 
+iptables -A OUTPUT -p tcp --dport 53  -j ACCEPT
+iptables -A OUTPUT -p udp --dport 53  -j ACCEPT
+
 
 #allow port 1194 udp used by vpn 
 iptables -A OUTPUT -p udp --dport 1194 -j ACCEPT
